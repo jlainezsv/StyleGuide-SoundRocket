@@ -1,0 +1,389 @@
+:root {
+    --ldiMainBlue:#00497B;
+    --ldiSecondBlue:#0077C8;
+    --ldiDarkBlue:#002c46;
+    --ldiDarkGray:#263640;
+    --ldiGray:#8F9193;
+    --ldiTextGray:#777777;
+    --ldiBorder:#D9D9D9;
+    --ldiDisable:#bdbdbd;
+    --ldiLightGray:#AAADB0;
+    --ldiGrayStripe:#E8E8E8;
+    --ldiBorders:#DEDEDE;
+    --ldiSuccess:#61C11A;
+    --ldiSuccessHover: #45A300;
+  }
+
+@font-face {
+    font-family: 'AvenirRegular';
+    src: url('../fonts/AvenirLTStd-Book.otf');
+}
+@font-face {
+    font-family: 'AvenirBlack';
+    src: url('../fonts/AvenirLTStd-Black.otf');
+}
+
+
+body, html{margin: 0; padding: 0; font-family:AvenirRegular; line-height: 1.3em; height: 100%;}
+body{background-color: var(--ldiMainBlue);}
+h1, h2,h3,h4,h5,h6{font-family: AvenirBlack;}
+
+a{
+    color: var(--ldiSecondBlue);
+    text-decoration: none;
+    margin-bottom: 15px;
+    &:hover{
+        color: var(--ldiMainBlue);
+    }
+}
+
+
+
+#scrollable-cont{
+    border: 1px solid var(--ldiGray); 
+    background: #fff;
+    border-radius: 6px; 
+    height: 100%; 
+    padding: 20px 5px 20px 20px;
+    .scrollble-area{
+        overflow-y: auto;
+        height: 100%; 
+        @include scrollbar-y();
+    }
+    
+}
+
+.height100{height: 100%;}
+
+
+.public-main-cont{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    //text-align: center;
+    img{
+        margin: 0 auto 20px;
+    }
+}
+
+
+// ICONS
+@mixin ico-bg-svg($ico-url, $display: block, $position: center center) {
+    -webkit-mask: $ico-url no-repeat $position;
+    mask: $ico-url no-repeat center center;
+    // -webkit-mask-size: $size;
+    // mask-size: $size;
+    //background-color: $bg-color;
+    display: $display;
+    // width: $width;
+    // height: $height;
+    //margin-right: 5px;
+    
+}
+@mixin ico-size($size: 24px, $width: 25px, $height:25px) {
+    -webkit-mask-size: $size;
+    mask-size: $size;
+    width: $width;
+    height: $height;
+}
+@mixin ico-color($ico-color) {
+    background-color: $ico-color;
+}
+@mixin text-color($text-color) {
+    color: $text-color;   
+}
+@mixin border-color($border-color) {
+    border-color: $border-color !important;    
+}
+@mixin hover-color($hover-color) {
+    &:hover{
+        color: $hover-color;
+     }
+}
+
+
+.accordion-item{margin: 10px auto}
+.icontainer{
+    display: block;
+    border: 1px solid var(--ldiBorder);
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    
+    &:hover {
+        .ico-blue{
+            @include ico-color($ico-color: var(--ldiSecondBlue));
+        }
+        .ico-gray{
+            @include ico-color($ico-color: var(--ldiGray));
+        }
+    }
+
+}
+
+.ico-alert{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-alert.svg));
+}
+.ico-close{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-close.svg));
+}
+.ico-check{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-check.svg));
+}
+.ico-report{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-report.svg));
+}
+.ico-take-survey{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-take-survey.svg));
+}
+.ico-edit{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-edit.svg));
+}
+.ico-reclaim{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-reclaim.svg));
+}
+.ico-group{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-group.svg));
+}
+.ico-keys{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-keys.svg));
+}
+.ico-360{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-360.svg));
+}
+.ico-chevron-l{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-chevron-left.svg));
+    @include ico-size($size: 60% !important);
+}
+.ico-chevron-r{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-chevron-right.svg));
+    @include ico-size($size: 60% !important);
+}
+.ico-user{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-user.svg));
+}
+.ico-logout{
+    @include ico-bg-svg($ico-url: url(/src/img//icons/ico-logout.svg));
+}
+
+// icons size options
+.icosize-1{
+    @include ico-size($size: 40px, $width: 40px, $height:40px);
+}
+.icosize-2{
+    @include ico-size($size: 30px, $width: 30px, $height:30px);
+}
+.icosize-3{
+    @include ico-size($size: 20px, $width: 20px, $height:20px);
+}
+.icosize-4{
+    @include ico-size($size: 17px, $width: 17px, $height:17px);
+}
+.icosize-5{
+    @include ico-size($size: 14px, $width: 14px, $height:14px);
+}
+
+//ico bg color options
+.bg-mainblue{
+    @include ico-color($ico-color: var(--ldiMainBlue));
+}
+.bg-blue{
+    @include ico-color($ico-color: var(--ldiSecondBlue));
+}
+.bg-darkblue{
+    @include ico-color($ico-color: var(--ldiDarkBlue));
+}
+.bg-darkgray{
+    @include ico-color($ico-color: var(--ldiDarkGray));
+}
+.bg-gray{
+    @include ico-color($ico-color: var(--ldiGray));
+}
+.bg-lightgray{
+    @include ico-color($ico-color: var(--ldiLightGray));
+}
+
+// color option
+.color-mainblue{
+    @include text-color($text-color: var(--ldiMainBlue));
+}
+.color-blue{
+    @include text-color($text-color: var(--ldiSecondBlue));
+}
+.color-darkblue{
+    @include text-color($text-color: var(--ldiDarkBlue));
+}
+.color-darkgray{
+    @include text-color($text-color: var(--ldiDarkGray));
+}
+.color-gray{
+    @include text-color($text-color: var(--ldiGray));
+}
+.color-lightgray{
+    @include text-color($text-color: var(--ldiLightGray));
+}
+
+// border option
+.border-mainblue{
+    @include border-color($border-color: var(--ldiMainBlue));
+}
+.border-blue{
+    @include border-color($border-color: var(--ldiSecondBlue));
+}
+.border-darkblue{
+    @include border-color($border-color: var(--ldiDarkBlue));
+}
+.border-darkgray{
+    @include border-color($border-color: var(--ldiDarkGray));
+}
+.border-gray{
+    @include border-color($border-color: var(--ldiGray));
+}
+.border-lightgray{
+    @include border-color($border-color: var(--ldiLightGray));
+}
+
+
+// Div with label title
+.divlabel{
+
+    .divlabel-content{
+        border: 1px solid var(--ldiBorders);
+        border-radius: 10px;
+        background: #fff;
+        width: fit-content;
+        padding: 20px 15px 15px;
+        margin-top: -22px;
+    }
+    
+    .divlabel-ttl{
+        width: fit-content;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        h5{
+            color: var(--ldiGray);
+            margin: 0px;
+            background-color: #fff;
+            padding: 0 5px;
+            margin-left: -5px;
+        }
+    }
+}
+// END Div with lablel title 
+
+// Steps 
+.steps-container{
+    display: flex;
+    justify-content: space-around;
+    .step{
+        width: fit-content;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    .step-approved{
+        .step-num{
+            padding: 15px 10px 10px;
+            width: 44px;
+            height: 44px;
+            background-color: var(--ldiSuccess);
+            border-radius: 50%;
+            font-size: 0;
+            background-image: url(/src/img//icons/ico-check.svg);
+            background-repeat: no-repeat;
+            background-position: center 15px;
+            background-size: 20px;
+        }
+        .step-label{
+            color: var(--ldiSuccess);
+            font-family: AvenirBlack;
+        }
+    }
+    .step-active{
+        .step-num{
+            padding: 15px 10px 10px;
+            width: 44px;
+            height: 44px;
+            background: var(--ldiDarkBlue);
+            font-family: AvenirBlack;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .step-label{
+            color: var(--ldiDarkBlue);
+            font-family: AvenirBlack;
+        }
+    }
+    .step-disable{
+        .step-num{
+            padding: 15px 10px 10px;
+            width: 44px;
+            height: 44px;
+            background: var(--ldiDisable);
+            font-family: AvenirBlack;
+            border-radius: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .step-label{
+            color: var(--ldiDisable);
+            font-family: AvenirBlack;
+        }
+    }
+}
+// End Steps
+
+// Pagination
+.pagination{
+    .page-item{
+        justify-content: stretch;
+        display: flex;
+        .page-link{
+            display: flex;
+            align-items: center;
+            color: var(--ldiMainBlue);
+            font-family: AvenirBlack;
+        }
+    }
+}
+// End Pagination 
+
+
+// Table demo
+.table-striped{
+    tr{
+        border-left: 1px solid var(--ldiBorders);
+        border-right: 1px solid var(--ldiBorders);
+    }
+}
+.table>:not(caption)>*>* {
+    padding: 0.5rem 0.5rem;
+    background-color: #fff;
+    border-bottom-width: 1px;
+    box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+}
+.table-dark {
+    color: #fff;
+    border-color: var(--ldiBorders);
+    td{
+        background-color: var(--ldiDarkGray);
+        font-family: AvenirBlack;
+    }
+}
+// End Table demo
+
+.demo-color{display: block; width: 100px; height: 100px; border-radius: 6px;}

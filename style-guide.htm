@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Style Guide</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+	<!-- Custom Styles  -->
+	<link rel="stylesheet" href="css/styles.css" />
+	<link rel="stylesheet" href="css/styleguidelayout.css" />
+
+	<!-- Highlight code  -->
+	<link href="css/prism.css" rel="stylesheet" />
+	<script src="js/prism.js"></script>
+
+	<style>
+		.mycontainer {
+			background: #f1f1f1;
+			padding: 25px;
+			margin-bottom: 25px;
+		}
+
+		.mycontainer .accordion-item {
+			border: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="head d-flex justify-content-between">
+		<div class="d-flex gap-3 mb-4 mt-4 align-items-center">
+			<button id="btn-nav" class="openbtn" onclick="openNav()">☰</button>
+			<h1 class="m-0" style="color: #fff;">Style Guide</h1>
+		</div>
+
+		<img src="/src/img//index-primary-reverse.svg" alt="" class="" style="width: 200px; height: auto;">
+	</div>
+	<div id="mySidebar" class="sidebar">
+		<a href="#inputExample">Inputs</a>
+		<a href="#selectExample">Select</a>
+		<a href="#checkRadioExample">Checkbox & Radio</a>
+		<a href="#yesNoMoreLessExample">Yes/No More/Less</a>
+		<a href="#buttonsExample">Buttons</a>
+		<a href="#scrollableDivExample">Scrollable div</a>
+		<a href="#iconsExample">Icons</a>
+		<a href="#logoExample">Logo</a>
+		<a href="#colorPaletteExample">Color palette</a>
+		<a href="#alertsExample">Alerts / Modals</a>
+		<a href="#divLabelExample">Div with title label</a>
+		<a href="#tableExample">Table Example</a>
+		<a href="#stepExample">Steps & Pagination</a>
+	</div>
+
+	<div id="main" style="overflow-y: auto;height: 100%;">
+		<div class="container-fluid pt-1 pb-1" style="background: #fff; border-radius: 10px;">
+			<!-- Forms  -->
+			<div class="mb-12 mt-3">
+				<!-- Input example -->
+				<div class="mycontainer mb-5" id="inputExample">
+					<div class="d-flex justify-content-between">
+						<h4>Inputs</h4>
+
+						<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeInput"
+							aria-expanded="false" aria-controls="flush-codeInput">
+							Code Example
+						</a>
+					</div>
+
+					<div class="row">
+						<div class="col-12 mb-1">
+							<label for="exampleInput" class="form-label">Label</label>
+
+							<input type="text" class="form-control" id="exampleInput" aria-describedby="Input"
+								placeholder="Demo placeholder">
+
+							<div id="exampleInput" class="form-text">Lorem Ipsum</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeInput">
+								<div class="accordion-item">
+									<div id="flush-codeInput" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeInput" data-bs-parent="#codeInput">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<label for="exampleInputEmail1" class="form-label">Label</label>
+	<input type="text" class="form-control" id="exampleInput" aria-describedby="Input" placeholder="Demo placeholder">
+	<div id="exampleInput" class="form-text">Lorem Ipsum</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr />
+
+					<div class="row">
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h6>User</h6>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeInputUsername" aria-expanded="false"
+									aria-controls="flush-codeInputUsername">
+									Code Example
+								</a>
+							</div>
+
+							<div class="row">
+								<div class="col-12 mb-1">
+									<label for="exampleInput" class="form-label">Username</label>
+
+									<input type="text" class="form-control input-username" id="exampleInput"
+										aria-describedby="Input" placeholder="demo@user.com">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h6>Password</h6>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeInputPass" aria-expanded="false"
+									aria-controls="flush-codeInputPass">
+									Code Example
+								</a>
+							</div>
+
+							<div class="row">
+								<div class="col-12 mb-1">
+									<label for="exampleInput" class="form-label">Password</label>
+
+									<input type="text" class="form-control input-password" id="exampleInput"
+										aria-describedby="Input"
+										placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<div class="accordion accordion-flush" id="codeInputUsername">
+							<div class="accordion-item">
+								<div id="flush-codeInputUsername" class="accordion-collapse collapse"
+									aria-labelledby="flush-codeInputUsername" data-bs-parent="#codeInputUsername">
+									<pre><code class="language-html"><xmp><div class="col-12">
+	<label for="exampleInput" class="form-label">Username</label>
+	<input type="text" class="form-control input-username" id="exampleInput" aria-describedby="Input" placeholder="demo@user.com">
+</div>
+</xmp></code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<div class="accordion accordion-flush" id="codeInputPass">
+							<div class="accordion-item">
+								<div id="flush-codeInputPass" class="accordion-collapse collapse"
+									aria-labelledby="flush-codeInputPass" data-bs-parent="#codeInputPass">
+									<pre><code class="language-html"><xmp><div class="col-12">
+	<label for="exampleInput" class="form-label">Password</label>
+	<input type="text" class="form-control input-password" id="exampleInput" aria-describedby="Input" placeholder="&#9679;&#9679;&#9679;">
+</div></xmp></code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Input example -->
+
+				<!-- Select example -->
+				<div class="mycontainer mb-5" id="selectExample">
+					<div class="row">
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h4>Select</h4>
+		
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeSelect"
+									aria-expanded="false" aria-controls="flush-codeSelect">
+									Code Example
+								</a>
+							</div>
+							<div class="col-12 mb-1">
+								<select class="form-select" aria-label="Default select example">
+									<option selected class="placeholder">Open this select menu</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h4>Select Number List</h4>
+		
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeSelectList"
+									aria-expanded="false" aria-controls="flush-codeSelectList">
+									Code Example
+								</a>
+							</div>
+		
+							<div class="row">
+								<div class="col-12 mb-1">
+									<div class="listselect">
+										<div class="listselect-num">1</div>
+										<select class="form-select" aria-label="Default select example">
+											<option selected class="placeholder">Open this select menu</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select>
+									</div>
+								</div>								
+							</div>
+						</div>
+
+						<div class="row">	
+							<div class="col-12">
+								<div class="accordion accordion-flush" id="codeSelect">
+									<div class="accordion-item">
+										<div id="flush-codeSelect" class="accordion-collapse collapse"
+											aria-labelledby="flush-codeSelect" data-bs-parent="#codeSelect">
+	<pre><code class="language-html"><xmp><div class="col-12">
+	<select class="form-select" aria-label="Default select example">
+		<option selected class="placeholder">Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
+</div></xmp></code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeSelectList">
+								<div class="accordion-item">
+									<div id="flush-codeSelectList" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeSelectList" data-bs-parent="#codeSelectList">
+										<pre><code class="language-html"><xmp><div class="listselect">
+	<div class="listselect-num">1</div>
+	<select class="form-select" aria-label="Default select example">
+		<option selected class="placeholder">Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	</select>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /Select example -->
+
+				<!-- Checkbox & radios example -->
+				<div class="mycontainer mb-5" id="checkRadioExample">
+					<div class="row">
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Checkbox</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeCheckbox" aria-expanded="false"
+									aria-controls="flush-codeCheckbox">
+									Code Example
+								</a>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+								<label class="form-check-label" for="flexCheckDefault">
+									Default checkbox
+								</label>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+								<label class="form-check-label" for="flexCheckChecked">
+									Checked checkbox
+								</label>
+							</div>
+						</div>
+
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Radio</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeRadio" aria-expanded="false"
+									aria-controls="flush-codeRadio">
+									Code Example
+								</a>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault1">
+
+								<label class="form-check-label" for="flexRadioDefault1">
+									Default radio
+								</label>
+							</div>
+
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault2" checked>
+
+								<label class="form-check-label" for="flexRadioDefault2">
+									Default checked radio
+								</label>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeCheckbox">
+								<div class="accordion-item">
+
+									<div id="flush-codeCheckbox" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeCheckbox" data-bs-parent="#codeCheckbox">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+		
+		<label class="form-check-label" for="flexCheckDefault">
+			Default checkbox
+		</label>
+	</div>
+
+	<div class="form-check">
+		<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+		
+		<label class="form-check-label" for="flexCheckChecked">
+			Checked checkbox
+		</label>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeRadio">
+								<div class="accordion-item">
+									<div id="flush-codeRadio" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeRadio" data-bs-parent="#codeRadio">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+
+		<label class="form-check-label" for="flexRadioDefault1">
+			Default radio
+		</label>
+	</div>
+
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+
+		<label class="form-check-label" for="flexRadioDefault2">
+			Default checked radio
+		</label>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Checkbox & radios example -->
+
+				<!-- Yes-no and more-less example -->
+				<div class="mycontainer mb-5" id="yesNoMoreLessExample">
+					<div class="row">
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Yes/No</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeYesNo" aria-expanded="false"
+									aria-controls="flush-codeYesNo">
+									Code Example
+								</a>
+							</div>
+
+							<div class="col-12">
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>More / Less</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeYesNo" aria-expanded="false"
+									aria-controls="flush-codeYesNo">
+									Code Example
+								</a>
+							</div>
+
+							<div class="morelesscontainer fade show active" id="boxfunc-location" role="tabpanel"
+								aria-labelledby="boxfunc-location">
+
+								<div id="" class="minus" onclick="less('qtyDemo');"></div>
+								<input id="qtyDemo" type="text" value="1" class="qty">
+								<div id="" class="add" onclick="add('qtyDemo');"></div>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeYesNo">
+								<div class="accordion-item">
+
+									<div id="flush-codeYesNo" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeYesNo" data-bs-parent="#codeYesNo">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<div class="morelesscontainer fade show active" id="boxfunc-location" role="tabpanel" aria-labelledby="boxfunc-location">
+		<div id="" class="minus" onclick="less('qtyDemo');"></div>
+		<input id="qtyDemo" type="text" value="1" class="qty">
+		<div id="" class="add" onclick="add('qtyDemo');"></div>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+
+								<div class="accordion-item">
+									<div id="flush-codeRadio" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeRadio" data-bs-parent="#codeRadio">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+		
+		<label class="form-check-label" for="flexRadioDefault1">
+			Default radio
+		</label>
+	</div>
+
+	<div class="form-check">
+		<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+		
+		<label class="form-check-label" for="flexRadioDefault2">
+			Default checked radio
+		</label>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Yes-no and more-less example -->
+
+				<!-- Buttons example -->
+				<div class="mycontainer mb-5" id="buttonsExample">
+					<div class="row">
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Buttons</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeButtonLight" aria-expanded="false"
+									aria-controls="flush-codeButtonLight">
+									Code Example
+								</a>
+							</div>
+
+							<div class="col-12 p-3">
+								<button type="button" class="btn btn-primary">Primary</button>
+								<button type="button" class="btn btn-outline-primary">Primary Outline</button>
+								<button type="button" class="btn btn-success">Success</button>
+							</div>
+						</div>
+
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Buttons Dark Background</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeButtonDark" aria-expanded="false"
+									aria-controls="flush-codeButtonDark">
+									Code Example
+								</a>
+							</div>
+
+							<div class="col-12 p-3" style="background: #00497B;">
+								<button type="button" class="btn btn-primary-white">Primary</button>
+								<button type="button" class="btn btn-outline-primary-white">Primary Outline</button>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeButtonLight">
+								<div class="accordion-item">
+									<div id="flush-codeButtonLight" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeButtonLight" data-bs-parent="#codeButtonLight">
+										<pre><code class="language-html"><xmp><div class="col-12 p-3">
+	<button type="button" class="btn btn-primary">Primary</button>
+	<button type="button" class="btn btn-outline-primary">Primary Outline</button>
+	<button type="button" class="btn btn-success">Success</button>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+
+							<div class="accordion accordion-flush" id="codeButtonDark">
+								<div class="accordion-item">
+									<div id="flush-codeButtonDark" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeButtonDark" data-bs-parent="#codeButtonDark">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<button type="button" class="btn btn-primary-white">Primary</button>
+	<button type="button" class="btn btn-outline-primary-white">Primary Outline</button>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr>
+					<!-- buttons with icons  -->
+					<div class="row">
+						<div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h6>Button With Icon</h6>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-botonIcon" aria-expanded="false"
+									aria-controls="flush-codeButtonLight">
+									Code Example
+								</a>
+							</div>
+
+							<div class="col-12 p-3">
+								<div class="d-flex inline-flex gap-1">
+									<button type="button" class="btn btn-outline-primary btn-icon border-lightgray">
+										<i class="icon ico-chevron-l icosize-5 bg-lightgray m-auto"></i>
+										<span class="color-lightgray">Previous</span> 
+									</button>
+									<button type="button" class="btn btn-outline-primary btn-icon border-lightgray">
+										<span class="color-lightgray">Next</span> 
+										<i class="icon ico-chevron-r icosize-5 bg-lightgray m-auto"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="col-6 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>Buttons Dark Background</h4>
+
+								<a class="collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#flush-codeButtonDark" aria-expanded="false"
+									aria-controls="flush-codeButtonDark">
+									Code Example
+								</a>
+							</div>
+
+							<div class="col-12 p-3" style="background: #00497B;">
+								<button type="button" class="btn btn-primary-white">Primary</button>
+								<button type="button" class="btn btn-outline-primary-white">Primary Outline</button>
+							</div>
+						</div> -->
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="botonIcon">
+								<div class="accordion-item">
+									<div id="flush-botonIcon" class="accordion-collapse collapse"
+										aria-labelledby="flush-botonIcon" data-bs-parent="#botonIcon">
+										<pre><code class="language-html"><xmp><div class="d-flex inline-flex gap-1">
+	<button type="button" class="btn btn-outline-primary btn-icon border-lightgray">
+		<i class="icon ico-chevron-l icosize-5 bg-lightgray m-auto"></i>
+		<span class="color-lightgray">Previous</span> 
+	</button>
+	<button type="button" class="btn btn-outline-primary btn-icon border-lightgray">
+		<span class="color-lightgray">Next</span> 
+		<i class="icon ico-chevron-r icosize-5 bg-lightgray m-auto"></i>
+	</button>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+
+							<!-- <div class="accordion accordion-flush" id="codeButtonDark">
+								<div class="accordion-item">
+									<div id="flush-codeButtonDark" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeButtonDark" data-bs-parent="#codeButtonDark">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<button type="button" class="btn btn-primary-white">Primary</button>
+	<button type="button" class="btn btn-outline-primary-white">Primary Outline</button>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+				<!-- /Buttons example -->
+
+				<!-- Scrollable div example -->
+				<div class="mycontainer mb-5" id="scrollableDivExample">
+					<div class="d-flex justify-content-between">
+						<h4>Scrollable Div</h4>
+
+						<a class="collapsed" type="button" data-bs-toggle="collapse"
+							data-bs-target="#flush-codeScrollDiv" aria-expanded="false"
+							aria-controls="flush-codeScrollDiv">
+							Code Example
+						</a>
+					</div>
+
+					<div class="row">
+						<div class="col-12 mb-1">
+							<label for="scrollable-cont">Demo Label</label>
+
+							<div class="scrollable-div" style="height: 250px;">
+								<div class="scrollable-cont" id="scrollable-cont">
+									<div class="scrollble-area">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper ultrices tincidunt. Curabitur feugiat dictum dolor, ut ornare turpis bibendum quis. Nunc laoreet eu mi nec facilisis. Nam convallis porttitor enim, nec lacinia dui varius interdum. Curabitur vulputate lacinia nibh, vel cursus dolor convallis ac. Nulla facilisi. Integer id nisi ipsum. Vivamus id pellentesque nisi, id luctus ex. Phasellus fermentum metus sit amet mattis efficitur. Etiam velit tortor, finibus vitae nisl et, sagittis maximus neque. Maecenas molestie quis ex nec luctus. Maecenas eu accumsan urna. Etiam ut euismod sapien. Duis dignissim luctus diam ac tincidunt.</p>
+										<p>Vestibulum vel sem nec massa convallis dapibus. Phasellus a tellus lobortis, egestas mauris id, pulvinar nunc. Vivamus vel tristique tellus. Vestibulum viverra arcu dui, ac mollis nisl commodo at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus metus metus, lobortis condimentum magna sit amet, elementum semper neque. Nullam maximus lectus eu vestibulum cursus. Suspendisse quis eros id nisi consectetur sodales vitae vel sem.</p>
+										<p>Curabitur semper turpis vel velit auctor auctor. Vivamus vel nunc suscipit, laoreet tortor eget, venenatis tortor. Duis varius dignissim enim, in finibus ipsum. Integer sit amet semper augue, tempus rutrum ligula. Etiam id fringilla neque. Etiam id elementum purus. Proin consequat sit amet eros eget suscipit. Sed ullamcorper, tellus vel imperdiet eleifend, enim diam fermentum mi, ut convallis massa lacus sit amet sem. Donec purus urna, varius vitae elementum sed, interdum id dolor. Nulla a gravida libero. In quis egestas sem. Proin ac magna et risus viverra iaculis. In nec justo eu libero rhoncus consectetur. Vestibulum vel cursus nisl. Sed cursus congue felis ac tincidunt.</p>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper ultrices tincidunt. Curabitur feugiat dictum dolor, ut ornare turpis bibendum quis. Nunc laoreet eu mi nec facilisis. Nam convallis porttitor enim, nec lacinia dui varius interdum. Curabitur vulputate lacinia nibh, vel cursus dolor convallis ac. Nulla facilisi. Integer id nisi ipsum. Vivamus id pellentesque nisi, id luctus ex. Phasellus fermentum metus sit amet mattis efficitur. Etiam velit tortor, finibus vitae nisl et, sagittis maximus neque. Maecenas molestie quis ex nec luctus. Maecenas eu accumsan urna. Etiam ut euismod sapien. Duis dignissim luctus diam ac tincidunt.</p>
+										<p>Vestibulum vel sem nec massa convallis dapibus. Phasellus a tellus lobortis, egestas mauris id, pulvinar nunc. Vivamus vel tristique tellus. Vestibulum viverra arcu dui, ac mollis nisl commodo at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus metus metus, lobortis condimentum magna sit amet, elementum semper neque. Nullam maximus lectus eu vestibulum cursus. Suspendisse quis eros id nisi consectetur sodales vitae vel sem.</p>
+										<p>Curabitur semper turpis vel velit auctor auctor. Vivamus vel nunc suscipit, laoreet tortor eget, venenatis tortor. Duis varius dignissim enim, in finibus ipsum. Integer sit amet semper augue, tempus rutrum ligula. Etiam id fringilla neque. Etiam id elementum purus. Proin consequat sit amet eros eget suscipit. Sed ullamcorper, tellus vel imperdiet eleifend, enim diam fermentum mi, ut convallis massa lacus sit amet sem. Donec purus urna, varius vitae elementum sed, interdum id dolor. Nulla a gravida libero. In quis egestas sem. Proin ac magna et risus viverra iaculis. In nec justo eu libero rhoncus consectetur. Vestibulum vel cursus nisl. Sed cursus congue felis ac tincidunt.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeScrollDiv">
+								<div class="accordion-item">
+									<div id="flush-codeScrollDiv" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeScrollDiv" data-bs-parent="#codeScrollDiv">
+										<pre><code class="language-html"><xmp><div class="col-12">
+	<label for="scrollable-cont">Demo Label</label>
+
+	<div class="scrollable-div" style="height: 250px;">
+		<div class="scrollable-cont" id="scrollable-cont">
+			<div class="scrollble-area">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper ultrices tincidunt. Curabitur feugiat dictum dolor, ut ornare turpis bibendum quis. Nunc laoreet eu mi nec facilisis. Nam convallis porttitor enim, nec lacinia dui varius interdum. Curabitur vulputate lacinia nibh, vel cursus dolor convallis ac. Nulla facilisi. Integer id nisi ipsum. Vivamus id pellentesque nisi, id luctus ex. Phasellus fermentum metus sit amet mattis efficitur. Etiam velit tortor, finibus vitae nisl et, sagittis maximus neque. Maecenas molestie quis ex nec luctus. Maecenas eu accumsan urna. Etiam ut euismod sapien. Duis dignissim luctus diam ac tincidunt.</p>
+				<p>Vestibulum vel sem nec massa convallis dapibus. Phasellus a tellus lobortis, egestas mauris id, pulvinar nunc. Vivamus vel tristique tellus. Vestibulum viverra arcu dui, ac mollis nisl commodo at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus metus metus, lobortis condimentum magna sit amet, elementum semper neque. Nullam maximus lectus eu vestibulum cursus. Suspendisse quis eros id nisi consectetur sodales vitae vel sem.</p>
+				<p>Curabitur semper turpis vel velit auctor auctor. Vivamus vel nunc suscipit, laoreet tortor eget, venenatis tortor. Duis varius dignissim enim, in finibus ipsum. Integer sit amet semper augue, tempus rutrum ligula. Etiam id fringilla neque. Etiam id elementum purus. Proin consequat sit amet eros eget suscipit. Sed ullamcorper, tellus vel imperdiet eleifend, enim diam fermentum mi, ut convallis massa lacus sit amet sem. Donec purus urna, varius vitae elementum sed, interdum id dolor. Nulla a gravida libero. In quis egestas sem. Proin ac magna et risus viverra iaculis. In nec justo eu libero rhoncus consectetur. Vestibulum vel cursus nisl. Sed cursus congue felis ac tincidunt.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper ultrices tincidunt. Curabitur feugiat dictum dolor, ut ornare turpis bibendum quis. Nunc laoreet eu mi nec facilisis. Nam convallis porttitor enim, nec lacinia dui varius interdum. Curabitur vulputate lacinia nibh, vel cursus dolor convallis ac. Nulla facilisi. Integer id nisi ipsum. Vivamus id pellentesque nisi, id luctus ex. Phasellus fermentum metus sit amet mattis efficitur. Etiam velit tortor, finibus vitae nisl et, sagittis maximus neque. Maecenas molestie quis ex nec luctus. Maecenas eu accumsan urna. Etiam ut euismod sapien. Duis dignissim luctus diam ac tincidunt.</p>
+				<p>Vestibulum vel sem nec massa convallis dapibus. Phasellus a tellus lobortis, egestas mauris id, pulvinar nunc. Vivamus vel tristique tellus. Vestibulum viverra arcu dui, ac mollis nisl commodo at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus metus metus, lobortis condimentum magna sit amet, elementum semper neque. Nullam maximus lectus eu vestibulum cursus. Suspendisse quis eros id nisi consectetur sodales vitae vel sem.</p>
+				<p>Curabitur semper turpis vel velit auctor auctor. Vivamus vel nunc suscipit, laoreet tortor eget, venenatis tortor. Duis varius dignissim enim, in finibus ipsum. Integer sit amet semper augue, tempus rutrum ligula. Etiam id fringilla neque. Etiam id elementum purus. Proin consequat sit amet eros eget suscipit. Sed ullamcorper, tellus vel imperdiet eleifend, enim diam fermentum mi, ut convallis massa lacus sit amet sem. Donec purus urna, varius vitae elementum sed, interdum id dolor. Nulla a gravida libero. In quis egestas sem. Proin ac magna et risus viverra iaculis. In nec justo eu libero rhoncus consectetur. Vestibulum vel cursus nisl. Sed cursus congue felis ac tincidunt.</p>  
+			</div>
+		</div>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Scrollable div example -->
+
+				<!-- Icons example -->
+				<div class="mycontainer mb-5" id="iconsExample">
+					<div class="row">
+						<div class="col-12 mb-1">
+							<div class="d-flex justify-content-between">
+								<h4>ICONS</h4>
+							</div>
+
+							<h5>Size</h5>
+
+							<div class="col-12 mb-5">
+								<div class="col-12 mb-2">
+									<div class="row mb-2">
+										<div class="col-1 d-flex align-items-center">
+											<div class="icontainer m-auto">
+												<i class="icon ico-alert icosize-1 bg-mainblue"></i>
+											</div>
+										</div>
+										
+										<div class="col-11">
+											<pre class="m-0"><code class="language-html d-flex">            
+												<xmp>
+													<div class="icontainer">
+														<i class="icon ico-alert icosize-1 bg-mainblue"></i>
+													</div>
+												</xmp>
+											</code></pre>
+										</div>
+									</div>
+
+									<div class="row mb-2">
+										<div class="col-1 d-flex align-items-center">
+											<div class="icontainer m-auto">
+												<i class="icon ico-alert icosize-2 bg-mainblue"></i>
+											</div>
+										</div>
+
+										<div class="col-11">
+											<pre class="m-0"><code class="language-html d-flex">            
+												<xmp>
+													<div class="icontainer">
+														<i class="icon ico-alert icosize-2 bg-mainblue"></i>
+													</div>
+												</xmp>
+											</code></pre>
+										</div>
+									</div>
+
+									<div class="row mb-2">
+										<div class="col-1 d-flex align-items-center">
+											<div class="icontainer m-auto">
+												<i class="icon ico-alert icosize-3 bg-mainblue"></i>
+											</div>
+										</div>
+
+										<div class="col-11">
+											<pre class="m-0"><code class="language-html d-flex">            
+												<xmp>
+													<div class="icontainer">
+														<i class="icon ico-alert icosize-3 bg-mainblue"></i>
+													</div>
+												</xmp>
+											</code></pre>
+										</div>
+									</div>
+
+									<div class="row mb-2">
+										<div class="col-1 d-flex align-items-center">
+											<div class="icontainer m-auto">
+												<i class="icon ico-alert icosize-4 bg-mainblue"></i>
+											</div>
+										</div>
+
+										<div class="col-11">
+											<pre class="m-0"><code class="language-html d-flex">            
+												<xmp>
+													<div class="icontainer">
+														<i class="icon ico-alert icosize-4 bg-mainblue"></i>
+													</div>
+												</xmp>
+											</code></pre>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<div class="row">
+									<!-- Icon Classes -->
+									<div class="col-4">
+										<h5>Icon Classes</h5>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-alert</p>
+										</div>
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-close icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-close</p>
+										</div>
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-check icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-check</p>
+										</div>
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-report icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-report</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-take-survey icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-take-survey</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-reclaim icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-reclaim</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-group icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-group</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-keys icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-keys</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-360 icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-360</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-chevron-l icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-chevron-l</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-chevron-r icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-chevron-r</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-user icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-user</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-1">
+												<i class="icon ico-logout icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">ico-logout</p>
+										</div>
+									</div>
+
+									<!-- Icon Colors  -->
+									<div class="col-4">
+										<h5>Colors</h5>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">bg-mainblue</p>
+										</div>
+										
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-blue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">bg-blue</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-darkgray m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">bg-darkgray</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-gray m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">bg-gray</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="mb-0">
+												<i class="icon ico-alert icosize-3 bg-lightgray m-auto"></i>
+											</div>
+
+											<p class="text-center m-0">bg-lightgray</p>
+										</div>
+									</div>
+
+									<!-- Icon Size  -->
+									<div class="col-4">
+										<h5>Icon Size</h5>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="col-3 mb-0">
+												<i class="icon ico-alert icosize-1 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0 d-flex align-items-center">icosize-1</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="col-3 mb-0">
+												<i class="icon ico-alert icosize-2 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0 d-flex align-items-center">icosize-2</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="col-3 mb-0">
+												<i class="icon ico-alert icosize-3 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0 d-flex align-items-center">icosize-3</p>
+										</div>
+
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="col-3 mb-0">
+												<i class="icon ico-alert icosize-4 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0 d-flex align-items-center">icosize-4</p>
+										</div>
+										<div class="col-12 d-flex gap-3 mb-3">
+											<div class="col-3 mb-0">
+												<i class="icon ico-alert icosize-5 bg-mainblue m-auto"></i>
+											</div>
+
+											<p class="text-center m-0 d-flex align-items-center">icosize-5</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Icons example -->
+
+				<!-- Logo usability example -->
+				<div class="mycontainer mb-10" id="logoExample">
+					<div class="d-flex justify-content-between mb-4">
+						<h4>Logo</h4>
+					</div>
+
+					<div class="row">
+						<div class="col-3 mb-1">
+							<h6>Primary</h6>
+							<p><img src="/src/img/indexlogo/index-primary.svg" alt="" style="width: 70%; height:auto"></p>
+						</div>
+						<div class="col-3 mb-1">
+							<h6>Primary Reverse</h6>
+							<img src="/src/img/indexlogo/index-primary-reverse.svg" alt="" style="width: 70%; height:auto">
+						</div>
+						<div class="col-3 mb-1">
+							<h6>Black & White</h6>
+							<img src="/src/img/indexlogo/index-black-white.svg" alt="" style="width: 70%; height:auto">
+						</div>
+						<div class="col-3 mb-1">
+							<h6>Sunburst</h6>
+							<img src="/src/img/indexlogo/index-sunburst.svg" alt="" style="width: 40%; height:auto">
+						</div>
+					</div>
+				</div>
+				<!-- /Logo usability example -->
+
+				<!-- Color palette example -->
+				<div class="mycontainer mb-10" id="colorPaletteExample">
+					<div class="d-flex justify-content-between">
+						<h4>Color Palette</h4>
+					</div>
+
+					<div class="row">
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-mainblue"></div>
+
+							<div class="color-codes">
+								<h6>ASPEN BLUE</h6>
+
+								<p class="mb-0"><span>HEX:</span> #00497B</p>
+								<p class="mb-0"><span>RGB:</span> rgb(0, 73, 123)</p>
+							</div>
+						</div>
+
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-blue"></div>
+
+							<div class="color-codes">
+								<h6>ASPEN SECONDARY BLUE</h6>
+
+								<p class="mb-0"><span>HEX:</span> #0077C8</p>
+								<p class="mb-0"><span>RGB:</span> rgb(0, 119, 200)</p>
+							</div>
+						</div>
+
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-darkblue"></div>
+							
+							<div class="color-codes">
+								<h6>ASPEN DARK BLUE</h6>
+
+								<p class="mb-0"><span>HEX:</span> #002c46</p>
+								<p class="mb-0"><span>RGB:</span> rgb(0, 44, 70)</p>
+							</div>
+						</div>
+						<hr class="mt-4 mb-4">
+						<h5>Other Colors:</h5>
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-lightgray"></div>
+							
+							<div class="color-codes">
+								<h6>Light Gray</h6>
+
+								<p class="mb-0"><span>HEX:</span> #AAADB0</p>
+								<p class="mb-0"><span>RGB:</span> rgb(170, 173, 176)</p>
+							</div>
+						</div>
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-gray"></div>
+							
+							<div class="color-codes">
+								<h6>Gray</h6>
+
+								<p class="mb-0"><span>HEX:</span> #8F9193</p>
+								<p class="mb-0"><span>RGB:</span> rgb(143, 145, 147)</p>
+							</div>
+						</div>
+						<div class="col-4 mb-1 d-flex gap-4 align-items-center">
+							<div class="demo-color bg-darkgray"></div>
+							
+							<div class="color-codes">
+								<h6>Dark Gray</h6>
+
+								<p class="mb-0"><span>HEX:</span> #263640</p>
+								<p class="mb-0"><span>RGB:</span> rgb(38, 54, 64)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Color palette example -->
+
+				<!-- Alerts & Modals -->
+				<div class="mycontainer mb-10" id="alertsExample">			
+					<div class="row">
+						<div class="col-6">
+								
+								<div class="d-flex justify-content-between">
+									<h4>Alerts</h4>
+									<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeAlerts" aria-expanded="false" aria-controls="flush-codeAlerts">
+										Code Example
+									</a>
+								</div>
+								<div class="col-12 mb-4">
+									<button type="button" class="btn btn-outline-primary" onclick="showAlert('alert-success')">Success Alert</button>
+									<button type="button" class="btn btn-outline-primary" onclick="showAlert('alert-danger')">Success Danger</button>
+									<button type="button" class="btn btn-outline-primary" onclick="showAlert('alert-warning')">Success Warning</button>
+								</div>
+								
+						</div>
+						
+						<div class="col-6">
+								<div class="d-flex justify-content-between">
+									<h4>Modals</h4>
+									<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeModals" aria-expanded="false" aria-controls="flush-codeModals">
+										Code Example
+									</a>
+								</div>
+			
+								<div class="row">
+									<div class="col-12 mb-4">
+										<!-- Button trigger modal -->
+										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+											Modal Demo
+										</button>
+										<!-- Modal -->
+										<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+													<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+													...
+													</div>
+													<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+			
+										<!-- Button Scrollable modal -->
+										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollablemodal">
+											Scrollable Modal
+										</button>
+										<!-- Scrollable modal -->
+										<div class="modal fade" id="scrollablemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-scrollable">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															<p>This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the prefedined max-height of modal, content will be cropped and scrollable within the modal.</p>
+															<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+															<p>This content should appear at the bottom after you scroll.</p>
+														</div>
+														<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+			
+										<!-- Button Vertically modal -->
+										<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Vertically">
+											Vertically Centered Modal
+										</button>
+										<!-- Vertically modal -->
+										<div class="modal fade" id="Vertically" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-dialog-centered modal-xl">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">
+															...
+														</div>
+														<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+			
+								</div>
+						</div>	
+					</div>
+
+					<!-- Demo alerts  -->
+					<div class="col-12">
+						<div id="alert-success" class="alert alert-success fade d-none" role="alert">
+							Success alert demo.
+							<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						<div id="alert-danger" class="alert alert-danger fade d-none" role="alert">
+							Danger alert demo.
+							<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+						<div id="alert-warning" class="alert alert-warning fade d-none" role="alert">
+							Warning alert
+							<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+						  </div>
+					</div>
+
+					<!-- Code example alerts  -->
+					<div class="col-12">
+							<div class="accordion accordion-flush" id="codeAlerts">
+								<div class="accordion-item">
+									<div id="flush-codeAlerts" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeAlerts" data-bs-parent="#codeAlerts">
+										<pre><code class="language-html"><xmp><div id="alert-success" class="alert alert-success fade d-none" role="alert">
+	Success alert demo.
+	<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div id="alert-danger" class="alert alert-danger fade d-none" role="alert">
+	Danger alert demo.
+	<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div id="alert-warning" class="alert alert-warning" role="alert">
+	Warning alert
+	<button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+					</div>
+					
+					<!-- Code example modals  -->
+					<div class="col-12">
+						<div class="accordion accordion-flush" id="codeModals">
+							<div class="accordion-item">
+								<div id="flush-codeModals" class="accordion-collapse collapse"
+									aria-labelledby="flush-codeModals" data-bs-parent="#codeModals">
+									<pre><code class="language-html"><xmp>
+Size			Class			Modal max-width
+Small			.modal-sm		300px
+Default			None			500px
+Large			.modal-lg		800px
+Extra large		.modal-xl		1140px		
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+	Modal Demo
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Button Scrollable modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scrollablemodal">
+	Scrollable Modal
+</button>
+<!-- Scrollable modal -->
+<div class="modal fade" id="scrollablemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-scrollable">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<p>This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the prefedined max-height of modal, content will be cropped and scrollable within the modal.</p>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<p>This content should appear at the bottom after you scroll.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Button Vertically modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Vertically">
+	Vertically Centered Modal
+</button>
+<!-- Vertically modal -->
+<div class="modal fade" id="Vertically" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-xl">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				...
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div></xmp></code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /Alerts & Modals -->
+
+				<!-- Div with label -->
+				<div class="mycontainer mb-10" id="divLabelExample">
+					<div class="row">
+						<div class="col-12">
+							<div class="d-flex justify-content-between">
+								<h4>Div with label</h4>
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeDivLabel" aria-expanded="false" aria-controls="flush-codeDivLabel">
+									Code Example
+								</a>
+							</div>
+							
+							<div class="row">
+								<div class="col-12 mb-4">
+									<div style="background-color: #fff; padding: 10px;">
+										<div class="divlabel">
+											<div class="divlabel-ttl">
+												<h5>Title Example</h5>
+											</div>
+											<div class="divlabel-content">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non massa vel orci pharetra varius eu sit amet ligula. Sed efficitur erat eget ultricies tempor. Sed urna enim, faucibus non magna et, commodo facilisis augue. Nullam est eros, molestie vel massa nec, aliquam facilisis nibh. Nam euismod nisi leo, nec venenatis lorem consequat eget. Donec nec commodo nisl. Nunc non aliquam diam. Mauris malesuada malesuada erat, a condimentum diam pellentesque id. Vivamus posuere, turpis eu fermentum dapibus, nunc mauris pharetra elit, sit amet ultrices nisl lacus eu velit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla odio risus, porta eget ornare ut, vestibulum vitae est.</p>
+												<p>Cras luctus lectus ante, ac ornare nisi maximus non. Pellentesque sodales odio in nisl dignissim, eget porttitor ex aliquam. Quisque mollis metus nec nisi vehicula ullamcorper. Sed luctus est mauris, id rhoncus felis consequat eu. Suspendisse vitae sem elementum, semper nisi ut, accumsan purus. Praesent commodo condimentum erat sed lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis velit eros. Cras ut lectus id orci volutpat hendrerit. Proin sed porttitor erat, eget pharetra est.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+		
+								<div class="col-12">
+									<div class="accordion accordion-flush" id="codeDivLabel">
+										<div class="accordion-item">
+											<div id="flush-codeDivLabel" class="accordion-collapse collapse"
+												aria-labelledby="flush-codeDivLabel" data-bs-parent="#codeDivLabel">
+												<pre><code class="language-html"><xmp><div class="divlabel">
+	<div class="divlabel-ttl">
+		<h5>Title Example</h5>
+	</div>
+	<div class="divlabel-content">
+		...
+	</div>
+</div></xmp></code></pre>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /Div with label -->
+
+				<!-- Table Example -->
+				<div class="mycontainer mb-10" id="tableExample">
+					<div class="row">
+						<div class="col-12">
+							<div class="d-flex justify-content-between">
+								<h4>Table Example</h4>
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeSteps" aria-expanded="false" aria-controls="flush-codeSteps">
+									Code Example
+								</a>
+							</div>
+							<div class="row">
+								<div class="col-12 mb-4">
+									<table class="table table-striped table-hover">
+										<thead class="table-dark">
+											<tr>
+												<td>ID</td>
+												<td>First</td>
+												<td>Last</td>
+												<td>Mail</td>
+												<td>Tel</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>0000</td>
+												<td>John</td>
+												<td>Doe</td>
+												<td>email@demo.me</td>
+												<td>777-7777-7777</td>
+											</tr>
+											<tr>
+												<td>0000</td>
+												<td>John</td>
+												<td>Doe</td>
+												<td>email@demo.me</td>
+												<td>777-7777-7777</td>
+											</tr>
+											<tr>
+												<td>0000</td>
+												<td>John</td>
+												<td>Doe</td>
+												<td>email@demo.me</td>
+												<td>777-7777-7777</td>
+											</tr>
+											<tr>
+												<td>0000</td>
+												<td>John</td>
+												<td>Doe</td>
+												<td>email@demo.me</td>
+												<td>777-7777-7777</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeSteps">
+								<div class="accordion-item">
+									<div id="flush-codeSteps" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeSteps" data-bs-parent="#codeSteps">
+										<pre><code class="language-html"><xmp><table class="table table-striped table-hover">
+	<thead class="table-dark">
+		...
+	</thead>
+	<tbody>
+		...
+	</tbody>
+</table></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /Table Example -->
+
+				<!-- Steps & Pagination -->
+				<div class="mycontainer mb-10" id="stepExample">
+					<div class="row">
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h4>Steps</h4>
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codeSteps" aria-expanded="false" aria-controls="flush-codeSteps">
+									Code Example
+								</a>
+							</div>
+							<div class="row">
+								<div class="col-12 mb-4">
+									<div class="steps-container">
+										<div class="step step-approved">
+											<div class="step-num">1</div>
+											<div class="step-label">Step Approved</div>
+										</div>
+										<div class="step step-active">
+											<div class="step-num">2</div>
+											<div class="step-label">Step Active</div>
+										</div>
+										<div class="step step-disable">
+											<div class="step-num">3</div>
+											<div class="step-label">Step Disable</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="d-flex justify-content-between">
+								<h4>Pagination</h4>
+								<a class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-codePagination" aria-expanded="false" aria-controls="flush-codePagination">
+									Code Example
+								</a>
+							</div>
+							<div class="row">
+								<div class="col-12 mb-4">
+									<nav aria-label="Page navigation example">
+										<ul class="pagination">
+										  <li class="page-item">
+											<a class="page-link m-0" href="#" aria-label="Previous">
+												<i class="icon ico-chevron-l icosize-5 bg-mainblue m-auto"></i>
+											</a>
+										  </li>
+										  <li class="page-item"><a class="page-link m-0" href="#">1</a></li>
+										  <li class="page-item"><a class="page-link m-0" href="#">2</a></li>
+										  <li class="page-item"><a class="page-link m-0" href="#">3</a></li>
+										  <li class="page-item">
+											<a class="page-link m-0" href="#" aria-label="Next">
+											  <i class="icon ico-chevron-r icosize-5 bg-mainblue m-auto"></i>
+											</a>
+										  </li>
+										</ul>
+									  </nav>
+								</div>
+		
+								
+							</div>
+						</div>
+
+						<!-- Steps code example  -->
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codeSteps">
+								<div class="accordion-item">
+									<div id="flush-codeSteps" class="accordion-collapse collapse"
+										aria-labelledby="flush-codeSteps" data-bs-parent="#codeSteps">
+										<pre><code class="language-html"><xmp><div class="steps-container">
+	<div class="step step-approved">
+		<div class="step-num">1</div>
+		<div class="step-label">Step Approved</div>
+	</div>
+	<div class="step step-active">
+		<div class="step-num">2</div>
+		<div class="step-label">Step Active</div>
+	</div>
+	<div class="step step-disable">
+		<div class="step-num">3</div>
+		<div class="step-label">Step Disable</div>
+	</div>
+</div></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12">
+							<div class="accordion accordion-flush" id="codePagination">
+								<div class="accordion-item">
+									<div id="flush-codePagination" class="accordion-collapse collapse"
+										aria-labelledby="flush-codePagination" data-bs-parent="#codePagination">
+										<pre><code class="language-html"><xmp><nav aria-label="Page navigation example">
+	<ul class="pagination">
+		<li class="page-item">
+			<a class="page-link m-0" href="#" aria-label="Previous">
+				<i class="icon ico-chevron-l icosize-5 bg-mainblue m-auto"></i>
+			</a>
+		</li>
+		<li class="page-item"><a class="page-link m-0" href="#">1</a></li>
+		<li class="page-item"><a class="page-link m-0" href="#">2</a></li>
+		<li class="page-item"><a class="page-link m-0" href="#">3</a></li>
+		<li class="page-item">
+			<a class="page-link m-0" href="#" aria-label="Next">
+				<i class="icon ico-chevron-r icosize-5 bg-mainblue m-auto"></i>
+			</a>
+		</li>
+	</ul>
+</nav></xmp></code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<!-- /Steps & Pagination -->
+			</div>
+			<!-- /Forms -->
+
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
+		
+	<script src="/js/functions.js" type="text/javascript"></script>
+
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+
+	<script>
+		function openNav() {
+			document.getElementById( "btn-nav") .setAttribute( "onclick", "closeNav()" );
+			document.getElementById( "mySidebar" ).style.width = "250px";
+			document.getElementById( "main" ).style.marginLeft = "250px";
+		}
+
+		function closeNav() {
+			document.getElementById( "btn-nav" ).setAttribute( "onclick", "openNav()" );
+			document.getElementById( "mySidebar" ).style.width = "0";
+			document.getElementById( "main" ).style.marginLeft = "0";
+		}
+
+		// show & hide alerts
+		function showAlert(idName) {
+		var x = document.getElementById(idName);
+		if (x.classList.contains("d-none") === true) {
+			//x.style.display = "block";
+			x.classList.add("display", "show");
+			x.classList.remove("d-none");
+		} else {
+			//x.style.display = "none";
+			x.classList.remove("display", "show");
+			x.classList.add("d-none");
+		}
+		}
+
+		// function showAlert(idName) {
+		// 	var x = document.getElementById(idName);
+		// 	if (x.style.display === "none") {
+		// 		x.classList.remove("hide");
+		// 		x.style.display = "block";
+		// 	} else {
+		// 		x.style.display = "none";
+		// 		x.classList.add("hide");
+		// 	}
+		// }
+	</script>
+</body>
+
+</html>

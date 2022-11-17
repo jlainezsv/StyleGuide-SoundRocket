@@ -1,0 +1,14 @@
+<svg id="More_less_btn" data-name="More / less btn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 34 34">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="17" height="17" fill="none"/>
+    </clipPath>
+  </defs>
+  <circle id="Ellipse_18" data-name="Ellipse 18" cx="17" cy="17" r="17" fill="#00497b"/>
+  <g id="Repeat_Grid_2" data-name="Repeat Grid 2" transform="translate(9 9)" clip-path="url(#clip-path)">
+    <g id="Group_238" data-name="Group 238" transform="translate(-1199 -792)">
+      <rect id="Rectangle_53" data-name="Rectangle 53" width="5" height="17" transform="translate(1205 792)" fill="#fff"/>
+      <rect id="Rectangle_54" data-name="Rectangle 54" width="5" height="17" transform="translate(1216 798) rotate(90)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

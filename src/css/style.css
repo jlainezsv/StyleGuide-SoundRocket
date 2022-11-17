@@ -1,0 +1,47 @@
+:root {
+	--ldiMainBlue: #00497B;
+	--ldiSecondBlue: #0077C8;
+	--ldiDarkGray: #263640;
+	--ldiGray: #8F9193;
+	--ldiLightGray: #AAADB0;
+	--ldiGrayStripe: #E8E8E8;
+	--ldiBorders: #DEDEDE;
+	--ldiSuccess: #61C11A;
+	--ldiSuccessHover: #45A300;
+}
+
+/* Add fonts */
+@font-face {
+	font-family: "Avenir Regular";
+	src: url( ../fonts/Avenir-Font/AvenirLTStd-Book.otf );
+}
+
+@font-face {
+	font-family: "Avenir Black";
+	src: url( ../fonts/Avenir-Font/AvenirLTStd-Black.otf );
+}
+
+/* Apply fonts to the document */
+* {
+	font-family: "Avenir Black";
+}
+
+/* Set background color */
+body, html {
+	height: 100%;
+	background-color: var( --ldiMainBlue );
+}
+
+.height-full {
+	height: 100%;
+}
+
+td, small, textarea {
+	font-family: "Avenir Regular";
+}
+
+.btn-primary {
+	color: #FFF;
+	background-color: var( --ldiMainBlue );
+	border-color: var( --ldiMainBlue );
+}

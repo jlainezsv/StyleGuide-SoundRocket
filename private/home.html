@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- Bootstrap and icons CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+
+		<!-- Custom style -->
+		<link rel="stylesheet" href="../src/css/style.css" />
+
+		<!-- Bootstrap JS -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+		
+		<!-- Alpine JS -->
+		<script defer src="https://unpkg.com/alpinejs@3.9.6/dist/cdn.min.js"></script>
+
+		<title>Home</title>
+	</head>
+
+	<body x-data="home" class="container-fluid">
+
+		<!-- Menu -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img src="../src/img/logo.svg" alt="logo" width="150" />
+				</a>
+				
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="nav">
+					<div class="navbar-nav me-auto mb-2 mb-lg-0"></div>
+
+					<a class="nav-link active" aria-current="page" href="#">Home</a>
+					<a class="nav-link" href="#">Manage Licenses</a>
+					<a class="nav-link border-end" href="#">My Keys</a>
+
+					<a class="nav-link border-start" href="#">
+						<i class="bi bi-person-circle"></i> Edit Profile
+					</a>
+
+					<a class="nav-link" href="#">
+						<i class="bi bi-box-arrow-right"></i> Logout
+					</a>
+				</div>
+			</div>
+		</nav>
+		<!-- /Menu -->
+
+		<section class="bg-light my-2 mx-md-5 p-4 rounded-3">
+
+			<!-- Header -->
+			<header>
+				<h2>Home</h2>
+			</header>
+			<!-- /Header -->
+
+			<div class="row">
+
+				<!-- Licenses -->
+				<template x-if="hasPermission( 'licenses' )">
+					<article class="col-md-6 col-sm-12 col-xs-12">
+						<fieldset class="border border-secondary p-3 mb-5 rounded-3">
+							<legend class="float-none w-auto text-secondary">Licenses</legend>
+
+							<!-- Individual Licenses -->
+							<div>
+								<div class="row">
+									<div class="col-6">
+										<h5>Individual</h5>
+									</div>
+									
+									<div class="col-6 text-end">
+										<a class="" href="#">View Licenses</a>
+									</div>
+								</div>
+	
+								<!-- Table Individual Licenses -->
+								<div class="table-responsive mb-1">
+									<table class="table table-sm table-striped table-hover align-middle">
+										<thead class="table-dark text-center">
+											<tr>
+												<th class="text-start">Product</th>
+												<th>Expiration</th>
+												<th>Status</th>
+												<th>Keys</th>
+												<th>Purchaser</th>
+												<th>Proxy</th>
+												<th>Alert</th>
+												<th>Manage</th>
+											</tr>
+										</thead>
+	
+										<tbody class="text-center">
+											<template x-for="( license, index ) in getData( 'licenses', 'individual' )" :key="index">
+												<tr>
+													<td class="text-start" x-text="license.product"></td>
+													<td x-text="license.expiration"></td>
+													<td x-text="license.status"></td>
+													<td x-text="license.keys"></td>
+													<td x-text="license.purchaser"></td>
+													<td x-text="license.proxy"></td>
+													<td>
+														<template x-if="license.isAlert">
+															<button class="btn btn-sm btn-light">
+																<i class="bi bi-exclamation-triangle-fill"></i>
+															</button>
+														</template>
+													</td>
+													
+													<td>
+														<div class="dropdown">
+															<button class="btn btn-sm btn-light" type="button" :id="`dropdownIndividualLicense${ index }`" data-bs-toggle="dropdown" aria-expanded="false">
+																<i class="bi bi-three-dots"></i>
+															</button>
+			
+															<ul class="dropdown-menu dropdown-menu-end" :aria-labelledby="`dropdownIndividualLicense${ index }`">
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill"></i> Edit</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-people-fill"></i> Manage Evaluators</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-slash-circle"></i> Reclaim a key</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pie-chart-fill"></i> Report</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up-right-square-fill"></i> Take the survey</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> View associated keys</a></li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</template>
+										</tbody>
+	
+										<tfoot>
+											<tr>
+												<td colspan="8">
+													<button class="btn btn-sm">&lt;</button>
+													<button class="btn btn-sm">1</button>
+													<button class="btn btn-sm">2</button>
+													<button class="btn btn-sm">3</button>
+													<button class="btn btn-sm">&gt;</button>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<!-- /Table Individual Licenses -->
+
+							</div>
+							<!-- /Individual Licenses -->
+
+							<!-- Team Licenses -->
+							<div>
+								<h5>Team</h5>
+	
+								<!-- Table Team Licenses -->
+								<div class="table-responsive mb-1">
+									<table class="table table-sm table-striped table-hover align-middle">
+										<thead class="table-dark text-center">
+											<tr>
+												<th class="text-start">Product</th>
+												<th>Expiration</th>
+												<th>Status</th>
+												<th>Keys</th>
+												<th>Purchaser</th>
+												<th>Proxy</th>
+												<th>Alert</th>
+												<th>Manage</th>
+											</tr>
+										</thead>
+	
+										<tbody class="text-center">
+											<template x-for="( license, index ) in getData( 'licenses', 'team' )" :key="index">
+												<tr>
+													<td class="text-start" x-text="license.product"></td>
+													<td x-text="license.expiration"></td>
+													<td x-text="license.status"></td>
+													<td x-text="license.keys"></td>
+													<td x-text="license.purchaser"></td>
+													<td x-text="license.proxy"></td>
+													<td>
+														<template x-if="license.isAlert">
+															<button class="btn btn-sm btn-light">
+																<i class="bi bi-exclamation-triangle-fill"></i>
+															</button>
+														</template>
+													</td>
+													
+													<td>
+														<div class="dropdown">
+															<button class="btn btn-sm btn-light" type="button" :id="`dropdownTeamLicense${ index }`" data-bs-toggle="dropdown" aria-expanded="false">
+																<i class="bi bi-three-dots"></i>
+															</button>
+			
+															<ul class="dropdown-menu dropdown-menu-end" :aria-labelledby="`dropdownTeamLicense${ index }`">
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill"></i> Edit</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-people-fill"></i> Manage Evaluators</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-slash-circle"></i> Reclaim a key</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pie-chart-fill"></i> Report</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up-right-square-fill"></i> Take the survey</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> View associated keys</a></li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</template>
+										</tbody>
+	
+										<tfoot>
+											<tr>
+												<td colspan="8">
+													<button class="btn btn-sm">&lt;</button>
+													<button class="btn btn-sm">1</button>
+													<button class="btn btn-sm">2</button>
+													<button class="btn btn-sm">3</button>
+													<button class="btn btn-sm">&gt;</button>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<!-- /Table Team Licenses -->
+
+							</div>
+							<!-- /Team Licenses -->
+
+						</fieldset>
+					</article>
+				</template>
+				<!-- /Licenses -->
+				
+				<!-- Keys -->
+				<template x-if="hasPermission( 'keys' )">
+					<article class="col-md-6 col-sm-12 col-xs-12">
+						<fieldset class="border border-secondary p-3 mb-5 rounded-3">
+							<legend class="float-none w-auto text-secondary">Keys</legend>
+
+							<!-- Individual keys -->
+							<div>
+								<div class="row">
+									<div class="col-6">
+										<h5>Individual</h5>
+									</div>
+									
+									<div class="col-6 text-end">
+										<a class="" href="#">View Keys</a>
+									</div>
+								</div>
+	
+								<!-- Table Individual Keys -->
+								<div class="table-responsive mb-1">
+									<table class="table table-sm table-striped table-hover align-middle">
+										<thead class="table-dark text-center">
+											<tr>
+												<th class="text-start" role="button">
+													Purchaser <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													360 Add-On <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Disposition <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Date <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th>Expiration</th>
+												<th>Alert</th>
+												<th>Manage</th>
+											</tr>
+										</thead>
+	
+										<tbody class="text-center">
+											<template x-for="( key, index ) in getData( 'keys', 'individual' )" :key="index">
+												<tr>
+													<td class="text-start" x-text="key.purchaser"></td>
+	
+													<td>
+														<template x-if="key.isAddOn" >
+															<i class="bi bi-arrow-clockwise"></i>
+														</template>
+													</td>
+	
+													<td x-text="key.disposition"></td>
+													<td x-text="key.date"></td>
+													<td x-text="key.expiration"></td>
+													<td>
+														<template x-if="key.isAlert" >
+															<button class="btn btn-sm btn-light">
+																<i class="bi bi-exclamation-triangle-fill"></i>
+															</button>
+														</template>
+													</td>
+													
+													<td>
+														<div class="dropdown">
+															<button class="btn btn-sm btn-light" type="button" :id="`dropdownIndividualKey${ index }`" data-bs-toggle="dropdown" aria-expanded="false">
+																<i class="bi bi-three-dots"></i>
+															</button>
+			
+															<ul class="dropdown-menu dropdown-menu-end" :aria-labelledby="`dropdownIndividualKey${ index }`">
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill"></i> Edit</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-people-fill"></i> Manage Evaluators</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-slash-circle"></i> Reclaim a key</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pie-chart-fill"></i> Report</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up-right-square-fill"></i> Take the survey</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> View associated keys</a></li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</template>
+										</tbody>
+	
+										<tfoot>
+											<tr>
+												<td colspan="7">
+													Total: <span x-text="getData( 'keys', 'individual' ).length"></span> | Page 1 of 1
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<!-- /Table Individual Keys -->
+
+							</div>
+							<!-- /Individual keys -->
+
+							<!-- Team keys -->
+							<div>
+								<h5>Team</h5>
+	
+								<!-- Table Team Keys -->
+								<div class="table-responsive mb-1">
+									<table class="table table-sm table-striped table-hover align-middle">
+										<thead class="table-dark text-center">
+											<tr>
+												<th class="text-start" role="button">
+													Purchaser <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													360 Add-On <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Disposition <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Date <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th>Expiration</th>
+												<th>Alert</th>
+												<th>Manage</th>
+											</tr>
+										</thead>
+	
+										<tbody class="text-center">
+											<template x-for="( key, index ) in getData( 'keys', 'team' )" :key="index">
+												<tr>
+													<td class="text-start" x-text="key.purchaser"></td>
+	
+													<td>
+														<template x-if="key.isAddOn" >
+															<i class="bi bi-arrow-clockwise"></i>
+														</template>
+													</td>
+	
+													<td x-text="key.disposition"></td>
+													<td x-text="key.date"></td>
+													<td x-text="key.expiration"></td>
+													<td>
+														<template x-if="key.isAlert" >
+															<button class="btn btn-sm btn-light">
+																<i class="bi bi-exclamation-triangle-fill"></i>
+															</button>
+														</template>
+													</td>
+													
+													<td>
+														<div class="dropdown">
+															<button class="btn btn-sm btn-light" type="button" :id="`dropdownTeamKey${ index }`" data-bs-toggle="dropdown" aria-expanded="false">
+																<i class="bi bi-three-dots"></i>
+															</button>
+			
+															<ul class="dropdown-menu dropdown-menu-end" :aria-labelledby="`dropdownTeamKey${ index }`">
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill"></i> Edit</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-people-fill"></i> Manage Evaluators</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-slash-circle"></i> Reclaim a key</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pie-chart-fill"></i> Report</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up-right-square-fill"></i> Take the survey</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> View associated keys</a></li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</template>
+										</tbody>
+	
+										<tfoot>
+											<tr>
+												<td colspan="7">
+													Total: <span x-text="getData( 'keys', 'team' ).length"></span> | Page 1 of 1
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<!-- /Table Team Keys -->
+
+							</div>
+							<!-- /Team keys -->
+
+							<!-- Evaluation keys -->
+							<div>
+								<h5>My Evaluations</h5>
+	
+								<!-- Table Evaluation Keys -->
+								<div class="table-responsive mb-1">
+									<table class="table table-sm table-striped table-hover align-middle">
+										<thead class="table-dark text-center">
+											<tr>
+												<th class="text-start" role="button">
+													Purchaser <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Relationship <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Disposition <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th role="button">
+													Date <i class="bi bi-caret-down-fill"></i>
+												</th>
+
+												<th>Expiration</th>
+												<th>Actions</th>
+											</tr>
+										</thead>
+	
+										<tbody class="text-center">
+											<template x-for="( key, index ) in getData( 'keys', 'evaluation' )" :key="index">
+												<tr>
+													<td class="text-start" x-text="key.purchaser"></td>
+	
+													<td x-text="key.relationship"></td>
+													<td x-text="key.disposition"></td>
+													<td x-text="key.date"></td>
+													<td x-text="key.expiration"></td>
+													
+													<td>
+														<div class="dropdown">
+															<button class="btn btn-sm btn-light" type="button" :id="`dropdownEvaluationKey${ index }`" data-bs-toggle="dropdown" aria-expanded="false">
+																<i class="bi bi-three-dots"></i>
+															</button>
+			
+															<ul class="dropdown-menu dropdown-menu-end" :aria-labelledby="`dropdownEvaluationKey${ index }`">
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pencil-fill"></i> Edit</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-people-fill"></i> Manage Evaluators</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-slash-circle"></i> Reclaim a key</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-pie-chart-fill"></i> Report</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-arrow-up-right-square-fill"></i> Take the survey</a></li>
+																<li><a class="dropdown-item" href="#"><i class="bi bi-key-fill"></i> View associated keys</a></li>
+															</ul>
+														</div>
+													</td>
+												</tr>
+											</template>
+										</tbody>
+	
+										<tfoot>
+											<tr>
+												<td colspan="7">
+													Total: <span x-text="getData( 'keys', 'evaluation' ).length"></span> | Page 1 of 1
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+								<!-- /Table Evaluation Keys -->
+
+							</div>
+							<!-- /Evaluation keys -->
+
+						</fieldset>
+					</article>
+				</template>
+				<!-- /Keys -->
+
+			</div>
+		</section>
+
+		<script type="text/javascript" src="../src/js/home.js"></script>
+	</body>
+</html>
